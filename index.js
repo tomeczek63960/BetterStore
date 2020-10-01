@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const productRouter = require("./server/router/product");
 const authRouter = require('./server/router/auth');
+const cartRouter = require('./server/router/cart');
 
 // middleware
 app.use(express.static('.'));
@@ -12,5 +13,6 @@ app.use( cors() );
 
 app.use('/products', productRouter);
 app.use('/auth', authRouter);
+app.use('/cart', cartRouter);
 
 app.listen(5500);
