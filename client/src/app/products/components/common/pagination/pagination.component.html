@@ -1,0 +1,7 @@
+<div class="pagination">
+  <span class="pagination__item__prev"  (click)="decreasePage()" *ngIf="prevPage > 1">&lt;&lt;</span>
+  <span class="pagination__item" (click)="decreasePage()" *ngIf="prevPage > 0">{{ prevPage }}</span>
+  <span class="pagination__item " [class.pagination__item--active]="activePage">{{ activePage }}</span>
+  <span class="pagination__item" (click)="increasePage()" *ngIf="nextPage <= lastPage">{{ nextPage }}</span>
+  <span class="pagination__item__next" (click)="increasePage()" *ngIf="nextPage < lastPage">&gt;&gt;</span>
+</div>

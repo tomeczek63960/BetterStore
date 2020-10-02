@@ -1,0 +1,17 @@
+<section class="categories">
+  <h3 class="heading categories__heading">Kategorie</h3>
+
+  <div class="categories__flex-container">
+    <a
+      [routerLink]="['products/filter']"
+      [queryParams]="{ filter: category.filter}"
+      *ngFor="let category of categories"
+      (click)="scrollTop()"
+    >
+      <div class="categories__category categories__category-{{ category.handle }}" >
+          <h3 class="categories__category__heading">{{ category.title }}</h3>
+      </div>
+    </a>
+  </div>
+
+</section>

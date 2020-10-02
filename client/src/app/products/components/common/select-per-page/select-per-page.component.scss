@@ -1,0 +1,40 @@
+@import '../../../../../style/shared';
+
+.pages{
+
+  .select{
+    position: relative;
+    width: 130px;
+
+    &::after{
+      @include absolute(50%,10px,auto,auto,translateY(-50%));
+      content:"";
+      width:10px;
+      height: 10px;
+      display: block;
+      transition: 0.5s;
+      pointer-events: none;
+
+      background-image: url('/assets/arrow-down.svg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &--active{
+      &::after{
+        transform: translateY(-50%) rotateX(180deg);
+      }
+    }
+  }
+  select{
+    padding:10px 35px 10px 15px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border:2px solid $lightBlack;
+    background: transparent;
+    color: $lightBlack;
+    cursor: pointer;
+  }
+
+}

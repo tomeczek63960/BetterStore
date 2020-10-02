@@ -1,0 +1,13 @@
+<div class="pages" >
+  <form>
+    <div class="select" [class.select--active]="selectActive">
+      <select (click)="setSelectActive($event)" class="select-type" (change)="changePerPage($event)" [value]="perPage" >
+        <option (click)="setSelectActive($event)" value="5" class="select-option">Pokaż: 5</option>
+        <option (click)="setSelectActive($event)" value="10" class="select-option">Pokaż: 10</option>
+        <option (click)="setSelectActive($event)" value="15" class="select-option">Pokaż: 15</option>
+        <option (click)="setSelectActive($event)" value="20" class="select-option"  >Pokaż: 20</option>
+        <option (click)="setSelectActive($event)" value="25" class="select-option">Pokaż: 25</option>
+      </select>
+    </div>
+  </form>
+</div>

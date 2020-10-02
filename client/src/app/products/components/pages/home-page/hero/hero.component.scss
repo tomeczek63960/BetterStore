@@ -1,0 +1,123 @@
+@import '../../../../../../style/shared';
+
+.page-hero{
+  padding-top: 40px;
+  text-align:center;
+
+  &,&__content{
+    @include flex(auto,center,auto,auto,column);
+  }
+  &__subheading{
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: Poppins;
+  }
+  &__heading{
+    margin-top: 30px;
+    font-size: 30px;
+    color:$dark;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+  }
+  &__description{
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  &__btn{
+    margin-top: 20px;
+    padding: 10px 20px 10px 45px;
+    background-color: $black;
+    color:$white;
+    border:none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: bold;
+
+    background-image: url('/assets/shopping-cart.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+  }
+  &__img{
+    margin-top: 30px;
+    max-width: 500px;
+    width:100%;
+  }
+}
+
+@media screen and (min-width:700px){
+  .page-hero{
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 25px;
+
+    &__content{
+      order:1;
+      text-align: left;
+      align-items: flex-start;
+      max-width: 360px;
+    }
+    &__btn{
+      margin-top: 35px;
+    }
+    &__img{
+      width: 48%;
+    }
+  }
+}
+
+@media screen and (min-width:900px){
+  .page-hero{
+    padding-top: 80px;
+
+    &__subheading{
+      font-size: 18px;
+    }
+    &__heading{
+      font-size: 35px;
+    }
+    &__btn{
+      padding: 13px 25px 13px 50px;
+      font-size: 17px;
+    }
+    &__description{
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+  }
+}
+
+@media screen and (min-width:1100px){
+  .page-hero{
+
+    &__content{
+      max-width: 600px;
+    }
+    &__subheading{
+      font-size: 18px;
+    }
+    &__heading{
+      font-size: 60px;
+    }
+    &__btn{
+      padding: 15px 30px 15px 60px;
+      font-size: 18px;
+      background-size: 30px;
+    }
+    &__description{
+      margin-top: 30px;
+      max-width: 450px;
+    }
+
+  }
+}
+
+@media screen and (min-width:1300px){
+  .page-hero{
+    column-gap: 85px;
+  }
+}

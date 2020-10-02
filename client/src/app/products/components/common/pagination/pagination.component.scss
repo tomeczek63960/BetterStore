@@ -1,0 +1,36 @@
+@import '../../../../../style/shared';
+
+.pagination{
+  @include absolute(auto,auto,0, 50%, translateX(-50%));
+  @include flex(center, flex-end,0 8px);
+  width: 100%;
+  border-top:1px solid $paginationBorder;
+  border-bottom:1px solid $paginationBorder;
+
+  &__item{
+    display: block;
+    transition:0.5s;
+
+    &,
+    &__next,
+    &__prev{
+      width:35px;
+      height:35px;
+      color:$lightBlack;
+      font-size: 18px;
+      font-family: Poppins;
+      text-align: center;
+      line-height: 35px;
+      cursor: pointer;
+    }
+
+    &:hover{
+      background: rgba(0,0,0,.5);
+      color:$white;
+    }
+    &--active{
+      background-color: $black;
+      color:$white;
+    }
+  }
+}

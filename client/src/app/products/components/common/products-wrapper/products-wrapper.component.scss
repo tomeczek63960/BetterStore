@@ -1,0 +1,89 @@
+@import '../../../../../style/shared';
+
+.flex-container{
+  @include flex(auto,auto,15px,wrap);
+  padding-bottom: 100px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.product{
+  flex-grow: 1;
+  flex-basis: 130px;
+  max-width:300px;
+
+  @media screen and (min-width:500px){
+    flex-basis: 160px;
+  }
+  @media screen and (min-width:900px){
+    flex-basis: 190px;
+  }
+  img{
+    width: 100%;
+  }
+  &__content{
+
+    &__category{
+      margin-top:10px;
+      color:$lightGray;
+      font-size:14px;
+      text-transform: capitalize;
+    }
+    &__heading{
+      margin-top: 10px;
+      height:40px;
+      display: block;
+      color: $dark;
+      font-family: Poppins;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    &__rates{
+      width:75px;
+      background-image:url("/assets/star-gray.svg");
+
+      &, &__active{
+        height:15px;
+        background-repeat: repeat-x;
+        background-position: left center;
+        background-size: 15px;
+      }
+      &__active{
+        display: block;
+        background-image: url('/assets/star.svg');
+      }
+    }
+    &__price-wrapper{
+      @include flex(space-between,center);
+      margin-top: 10px;
+      font-weight:bold;
+    }
+    &__price{
+      color:$dark;
+      font-size:15px;
+    }
+    &__discount{
+      color: $gray;
+      font-size:14px;
+      text-decoration: line-through;
+    }
+  }
+
+}
+
+@media screen and (min-width:900px){
+  .products-wrapper{
+    @include flex();
+  }
+  app-search-bar{
+      margin:0 30px 0 0;
+      width:26%;
+      order:-1;
+      flex-shrink:0;
+  }
+}
+
+app-select-per-page{
+  flex-shrink: 0;
+  width:100%;
+}
