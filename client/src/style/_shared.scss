@@ -14,7 +14,7 @@ $navbarBg: #f9f9f9;
 $navbarItemBorder: #eaeaea;
 $paginationBorder:rgba(0,0,0,.1);
 $searchBarBg:#f4f4f4ce;
-
+$pink: #ea9;
 @mixin absolute($top:auto,$right:auto,$bottom:auto,$left:auto,$transform:auto,$index:auto,$position:absolute) {
   position: $position;
 

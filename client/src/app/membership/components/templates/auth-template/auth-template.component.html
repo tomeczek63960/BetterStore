@@ -1,0 +1,66 @@
+
+ <section class="auth-template">
+  <header class="auth-template__header">
+    <div routerLinkActive="auth-template__header__toggler--active" class="auth-template__header__toggler ">
+      <a routerLink='/login'>Sing In</a>
+    </div>
+    <div routerLinkActive="auth-template__header__toggler--active" class="auth-template__header__toggler">
+      <a routerLink='/register'>Sing Up</a>
+    </div>
+  </header>
+
+  <div class="auth-template__body">
+
+    <form  [formGroup]="authGroup" class="auth-template__body__form form" autocomplete="off" (ngSubmit)="handleSubmit()" >
+
+      <ng-container
+        *ngFor="let field of inputFields"
+      >
+
+        <div
+          class="form-field"
+          *ngIf="field.formType.indexOf(type) !== -1"
+        >
+
+          <label [for]="field.key" class="form-field__label--large">{{ field.label }}</label>
+
+          <ng-container *ngFor="let err of field.errors">
+            <p class="form-field__error"
+            *ngIf="
+                authGroup.get(field.key).touched &&
+                authGroup.get(field.key).dirty &&
+                authGroup.get(field.key).errors &&
+                authGroup.get(field.key).errors[err.type]
+            "
+            >{{ err.msg }}</p>
+          </ng-container>
+
+
+          <input
+            class="form-field__control form-field__control--mt-large"
+            [type]="field.type"
+            [id]='field.type'
+            [placeholder]="field.placeholder"
+            [formControlName]="field.key"
+
+            [class.form-field__control--invalid]="
+                authGroup.get(field.key).dirty &&
+                authGroup.get(field.key).status === 'INVALID'
+            "
+
+            [class.form-field__control--valid]="
+                authGroup.get(field.key).dirty &&
+                authGroup.get(field.key).status === 'VALID'
+            "
+          />
+          </div>
+
+      </ng-container>
+
+      <button class="form__btn" [disabled]="authGroup.status === 'INVALID' " >{{ type === 'login' ? "Zaloguj" : "Załóż konto"}}</button>
+
+    </form>
+
+  </div>
+
+ </section>

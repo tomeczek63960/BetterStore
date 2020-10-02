@@ -1,3 +1,4 @@
+import { MembershipModule } from './membership/membership.module';
 import { ProductsModule } from './products/products.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,7 @@ import { HttpErrorInterceptorInterceptor } from 'src/app/core/http-interceptors/
 
     CoreModule,
     SharedModule,
+    MembershipModule,
     ProductsModule
   ],
   providers: [

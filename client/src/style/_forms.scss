@@ -1,0 +1,88 @@
+.form{
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 20px;
+  max-width: 700px;
+
+  &__edit-account{
+    margin-top: 40px;
+  }
+}
+
+.form-field{
+  margin-top: 35px;
+  font-family: Poppins;
+  display: flex;
+  flex-basis:270px;
+  flex-grow: 1;
+  flex-direction: column;
+
+  &--full-width{
+    flex-basis: 100%;
+  }
+
+  &:first-child{
+    margin-top: 15px;
+  }
+
+  &__label{
+    margin-right: 20px;
+    cursor: pointer;
+
+    &--large{
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  &__control{
+    border:none;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    font-family: Poppins;
+    border-bottom: 3px solid rgb(7, 7, 7);
+    transition:0.5s;
+
+    &--mt-large{
+      margin-top: 10px;
+    }
+
+    &:focus{
+      border-color: #4ac;
+    }
+    &--invalid{
+      border-color:rgb(202, 21, 21)!important;
+    }
+    &--valid{
+      border-color:rgba(48, 235, 23, 0.986)!important;
+    }
+
+    &::placeholder{
+      color:#aaa
+    }
+  }
+  &__error{
+    color:rgb(250, 14, 14);
+    font-size: 13px;
+  }
+}
+
+.form__btn{
+  margin-top: 30px;
+  width: 100%;
+  background:#000;
+  color:white;
+  padding: 14px 0;
+  border:none;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  &:disabled{
+    background: lighten($color: #000000, $amount: 40)
+  }
+}
