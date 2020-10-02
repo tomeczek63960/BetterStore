@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,13 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularToastifyModule,
+
     CoreModule
   ],
-  providers: [],
+  providers: [
+    ToastService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
