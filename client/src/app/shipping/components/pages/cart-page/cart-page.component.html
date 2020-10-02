@@ -1,0 +1,35 @@
+<div class="cart-page">
+  <h3 class="heading">Twój koszyk</h3>
+
+  <table class="cart__content">
+    <thead class="cart__content__head">
+      <tr>
+        <th class="cart__content__head__max">Produkt:</th>
+        <th>Cena:</th>
+        <th>Ilość:</th>
+        <th>Total:</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="cart-page__empty-cart" *ngIf="!products.length"><td>Brak produktów w koszyku</td></tr>
+      <tr class="product" *ngFor="let product of products ">
+        <td> <span class="product-delete" (click)="removeProduct(product)"> x</span></td>
+        <td><img [src]="product.img" [alt]="product.title"></td>
+        <td class="product-flex product-flex__max"><p class="display-none--sm">Produkt:</p> <p class="product__title">{{ product.title }}</p></td>
+        <td class="product-flex"><p class="display-none--sm">Cena:</p> <p>{{ product.price.toFixed(2) }}zł</p></td>
+        <td class="product-flex"><p class="display-none--sm">Ilość:</p> <p class="ms--center">{{ product.amount }}</p></td>
+        <td class="product-flex"><p class="display-none--sm">Total:</p> <p>{{ (product.amount * product.price).toFixed(2) }}zł</p></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <table class="cart-page__total cart__content">
+    <thead> <tr> <th> Podsumowanie koszyka </th> </tr> </thead>
+    <tbody class="cart-page__total__body">
+      <tr><td><p>Cena</p> <p>{{ getTotalPrice() }}zł</p></td></tr>
+      <tr><td><button class="btn form__btn" [disabled]="getTotalPrice() == 0" routerLink="/shipping">Zapłać</button></td></tr>
+    </tbody>
+  </table>
+</div>

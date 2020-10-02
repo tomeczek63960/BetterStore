@@ -6,6 +6,7 @@ $dark: #333;
 $gray: #555;
 $lightGray: #9c9797;
 $red: #820;
+$pink: #ea9;
 
 $footerBg:#001524;
 $footerLink:#FFFFFFC2;
@@ -14,7 +15,8 @@ $navbarBg: #f9f9f9;
 $navbarItemBorder: #eaeaea;
 $paginationBorder:rgba(0,0,0,.1);
 $searchBarBg:#f4f4f4ce;
-$pink: #ea9;
+$cartTableBorder:#cacaca;
+
 @mixin absolute($top:auto,$right:auto,$bottom:auto,$left:auto,$transform:auto,$index:auto,$position:absolute) {
   position: $position;
 

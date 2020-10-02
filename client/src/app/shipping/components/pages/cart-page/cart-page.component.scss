@@ -1,0 +1,139 @@
+@import '../../../../../style/shared';
+
+.cart-page{
+  margin-bottom: 50px;
+}
+.cart__content{
+  border:1px solid $cartTableBorder;
+  width:100%;
+  color: #454;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Poppins;
+}
+.product{
+  @include flex(auto,auto,auto,auto,column);
+
+  td{
+    padding:10px;
+    border-bottom:1px solid $cartTableBorder;
+  }
+  &:last-child td:last-child{
+      border-bottom: none;
+  }
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width:50px;
+    height:50px;
+  }
+  &-delete{
+    margin-left: auto;
+    width:30px;
+    height:30px;
+    display: block;
+    border-radius: 50%;
+    border:1px solid #c5b7b7;
+    color:#c5b7b7;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  &__title{
+    color:$black;
+  }
+  &-flex{
+    @include flex(space-between,center);
+  }
+}
+.cart-page__total{
+  max-width: 400px;
+  margin-top: 30px;
+  margin-left: auto;
+
+  th, td{
+    padding: 10px;
+  }
+  &__body td{
+    @include flex(space-between,center);
+    border-top:1px solid $cartTableBorder;
+  }
+}
+.cart-page__empty-cart td{
+  padding: 30px;
+}
+.cart__content__head{
+  display: none;
+}
+
+@media screen and (min-width:700px){
+
+  .cart__content__head{
+    padding-right: 50px;
+    width: 100%;
+    display: block;
+    background-color: rgba(0,0,0,0.95);
+    border-bottom:1px solid $cartTableBorder;
+    color:$white;
+
+    tr{
+      @include flex(space-between,center);
+    }
+    th{
+      padding:20px 10px;
+      width:80px;
+    }
+    &__max{
+      margin-left: 100px;
+      margin-right: auto;
+    }
+  }
+  .display-none--sm{
+    display: none;
+  }
+  .product{
+    padding-right: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid $cartTableBorder;
+
+    &:last-child{
+      border:none;
+    }
+    img{
+      width:70px;
+      height:70px;
+    }
+    td{
+      width:80px;
+    }
+    .ms--center{
+      margin-right: auto;
+      margin-left: auto;
+    }
+    &-flex__max{
+      flex-grow:1;
+      text-align:left;
+    }
+    td{
+      border:none
+    }
+  }
+
+}
+
+@media screen and (min-width:900px){
+  .cart__content__head{
+    th{
+      width:100px;
+    }
+  }
+  .product{
+    td{
+      width:100px;
+    }
+  }
+
+}
