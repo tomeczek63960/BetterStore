@@ -1,3 +1,4 @@
+import { User } from 'src/app/membership/interfaces/User';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/membership/services/auth.service';
 import { Component } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class LoginPageComponent {
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
-  handleSubmit = (value: any): void => {
+  handleSubmit = (value: User): void => {
 
     this.authService.loginUser(value).subscribe(res => {
         localStorage.setItem('token', `Bearer ${res.token}`);

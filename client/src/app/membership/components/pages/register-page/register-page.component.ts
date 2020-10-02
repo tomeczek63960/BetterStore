@@ -1,3 +1,4 @@
+import { User } from 'src/app/membership/interfaces/User';
 import { ToastService } from 'angular-toastify';
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/membership/services/auth.service';
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/membership/services/auth.service';
 export class RegisterPageComponent {
   constructor(private authService: AuthService, private toastService: ToastService) { }
 
-  handleSubmit(value: any): void{
+  handleSubmit(value: User): void{
     this.authService.registerUser(value).subscribe(res => {
       this.toastService.success('Użytkownik został dodany!');
     });

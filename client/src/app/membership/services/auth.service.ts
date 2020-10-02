@@ -1,4 +1,4 @@
-import { ToastService } from 'angular-toastify';
+import { User } from 'src/app/membership/interfaces/User';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
@@ -9,19 +9,19 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService  {
   constructor(private http: HttpClient) { }
 
-  loginUser(userData: object): Observable<any>{
+  loginUser(userData: User): Observable<any>{
     return this.http.post('http://localhost:5500/auth/login', userData);
   }
 
-  registerUser(userData: object): Observable<any>{
-    return this.http.post('http://localhost:5500/auth/register', userData);
+  registerUser(userData: User): Observable<User>{
+    return this.http.post<User>('http://localhost:5500/auth/register', userData);
   }
 
-  getUserData(): Observable<any> {
-    return this.http.get('http://localhost:5500/auth');
+  getUserData(): Observable<User> {
+    return this.http.get<User>('http://localhost:5500/auth');
   }
-  changeUserData(data): Observable<any>{
-    return this.http.post('http://localhost:5500/auth', { data } );
+  changeUserData(data: User): Observable<User>{
+    return this.http.post<User>('http://localhost:5500/auth', { data } );
   }
 
 }
