@@ -14,8 +14,9 @@ $copyrightBorder:#3d3d3d;
 $navbarBg: #f9f9f9;
 $navbarItemBorder: #eaeaea;
 $paginationBorder:rgba(0,0,0,.1);
-$searchBarBg:#f4f4f4ce;
+$searchBarBg:#f4f4f4;
 $cartTableBorder:#cacaca;
+$searchBarColor: #777;
 
 @mixin absolute($top:auto,$right:auto,$bottom:auto,$left:auto,$transform:auto,$index:auto,$position:absolute) {
   position: $position;

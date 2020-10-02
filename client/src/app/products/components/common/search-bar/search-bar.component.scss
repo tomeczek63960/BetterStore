@@ -1,7 +1,7 @@
 @import '../../../../../style/shared';
 
 .search-bar{
-  margin:20px -20px 0;
+  margin:20px -20px -30px;
   padding:30px 20px;
   width:calc(100% + 40px);
   height: 100%;
@@ -14,85 +14,86 @@
   @media screen and (min-width:900px){
       margin-top: 0;
   }
-}
-.price-range{
-  &__wrapper{
-    @include flex(auto,auto,0 25px);
-    margin-top: 30px;
-  }
-  input{
-    margin-top: 5px;
-    padding: 0 5px;
-    height:35px;
-    width:70px;
-    display: block;
-    color:#777;
-    font-size: 15px;
-  }
-  label{
-    text-transform: lowercase;
-    color:$gray;
-  }
-}
 
-.search-input-wrapper{
-  width:100%;
-  height:45px;
-
-  input{
-      padding:0 15px;
-      height:100%;
-      width:100%;
-      display:block;
-      border:2px solid #ddd;
-      color:#777;
-      font-size:15px;
-      font-weight:bold;
-
-      &::placeholder{
-        color:#999;
-      }
+  &__subheading{
+    margin:25px 0 15px;
+    font-size:18px;
+    font-family:Poppins;
+    font-weight:bold;
+    color:$searchBarColor;
   }
 
-}
-.subheading{
-  margin:25px 0 15px;
-  font-size:18px;
-  font-family:Poppins;
-  font-weight:bold;
-  color:#777;
-}
-.checkbox{
-  margin-right:5px;
-  width:15px;
-  height:15px;
-  display:inline-block;
-  position:relative;
-  border:3px solid #777;
-  vertical-align:middle;
-  cursor:pointer;
+  &__price-range{
+    &__wrapper{
+      @include flex(auto,auto,0 25px);
+    }
+    input{
+      margin-top: 5px;
+      padding: 0 5px;
+      height:35px;
+      width:70px;
+      display: block;
+      color:$searchBarColor;
+      font-size: 15px;
+    }
+    label{
+      text-transform: lowercase;
+      color:$gray;
+    }
+  }
 
-  &::after{
-    @include absolute(50%,auto,auto,50%,translate(-50%,-50%));
-      content:"";
-      width:6px;
-      height:6px;
-      display:block;
-      background:transparent;
+  &__checkbox-wrapper{
+    margin-top:5px;
+    color:$dark;
+    font-size:15px;
+    font-family:Poppins;
+
+    input[type=checkbox]:checked + label > span::after{
+        background:$searchBarColor;
+    }
+    label{
+      cursor: pointer;
+    }
   }
-}
-input[type=checkbox]:checked + label .checkbox::after{
-  background: #777;
-}
-.checkbox-wrapper{
-  margin-top:5px;
-  color:$dark;
-  font-size:15px;
-  font-family:Poppins;
-  input[type=checkbox]:checked + label > span::after{
-      background:#777;
+
+  &__checkbox{
+    margin-right:5px;
+    width:15px;
+    height:15px;
+    display:inline-block;
+    position:relative;
+    border:3px solid $searchBarColor;
+    vertical-align:middle;
+    cursor:pointer;
+
+    &::after{
+      @include absolute(50%,auto,auto,50%,translate(-50%,-50%));
+        content:"";
+        width:6px;
+        height:6px;
+        display:block;
+        background:transparent;
+    }
   }
-  label{
-    cursor: pointer;
+
+  &__input-wrapper{
+    width:100%;
+    height:45px;
+
+    input{
+        padding:0 15px;
+        height:100%;
+        width:100%;
+        display:block;
+        border:2px solid #ddd;
+        color:$searchBarColor;
+        font-size:15px;
+        font-weight:bold;
+
+        &::placeholder{
+          color:#999;
+        }
+    }
+
   }
 }

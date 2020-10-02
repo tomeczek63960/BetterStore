@@ -3,8 +3,8 @@
 
     <form #searchForm2="ngForm"  (submit)="handleSubmit()">
 
-      <h4 class="subheading">Wyszukaj</h4>
-      <div class="search-input-wrapper" >
+      <h4 class="search-bar__subheading">Wyszukaj</h4>
+      <div class="search-bar__input-wrapper" >
         <input
           type="text"
           placeholder="Nazwa"
@@ -12,11 +12,11 @@
           [value]="title"
           (change)="title = $event.target.value"
         />
-    </div>
+      </div>
 
-      <h4 class="subheading">Kategorie</h4>
+      <h4 class="search-bar__subheading">Kategorie</h4>
 
-      <div class="checkbox-wrapper" *ngFor="let category of categories">
+      <div class="search-bar__checkbox-wrapper" *ngFor="let category of categories">
           <input
             (change)="handleCheckboxChange($event.target)"
             type="checkbox"
@@ -25,11 +25,13 @@
             [value]="category.value"
             [checked]="category.isActive"
           />
-          <label [for]="category.value" ><span class="checkbox" ></span>{{ category.title }}</label>
+          <label [for]="category.value" ><span class="search-bar__checkbox" ></span>{{ category.title }}</label>
       </div>
 
-      <div class="price-range__wrapper">
-        <div class="price-range">
+      <h4 class="search-bar__subheading">Cena</h4>
+      <div class="search-bar__price-range__wrapper">
+
+        <div class="search-bar__price-range">
           <label for="price-min" >Od</label>
           <input
             type="number"
@@ -39,7 +41,8 @@
             (blur)="handlePriceChange($event.target, 'min' )"
           >
         </div>
-        <div class="price-range">
+
+        <div class="search-bar__price-range">
           <label for="price-max" >Do</label>
           <input
             type="number"
@@ -49,9 +52,9 @@
             (blur)="handlePriceChange($event.target, 'max' )"
           >
         </div>
+
       </div>
       <button class="form__btn">Szukaj</button>
-
 
     </form>
 
