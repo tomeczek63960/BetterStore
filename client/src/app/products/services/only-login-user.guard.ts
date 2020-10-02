@@ -13,7 +13,7 @@ export class OnlyLoginUserGuard implements CanActivate {
 
       if ( !localStorage.getItem('token') ){
 
-        this.router.navigate(['/login'], {
+        this.router.navigate(['/auth/login'], {
           queryParams: {
             return: prevLocation
           }
@@ -28,7 +28,7 @@ export class OnlyLoginUserGuard implements CanActivate {
         }else{
           reject(false);
 
-          this.router.navigate(['/login'], {
+          this.router.navigate(['/auth/login'], {
             queryParams: {
               return: prevLocation
             }

@@ -11,7 +11,7 @@
         <li class="page-navbar__submenu__item" (click)="toggleNavbar()"><a [routerLink]="['/products/filter']" [queryParams]="{ filter: categoriesParams.cosmetics}">Kosmetyki</a></li>
       </ul>
   </li>
-  <li class="page-navbar__item" (click)="toggleNavbar()" routerLinkActive='page-navbar__item--active' ><a routerLink='/account' >Moje konto</a></li>
+  <li class="page-navbar__item" (click)="toggleNavbar()" routerLinkActive='page-navbar__item--active' ><a routerLink='/auth/account' >Moje konto</a></li>
 
 </ul>
 <app-bars [isActive]="isActive" (toggleNavbar)="toggleNavbar($event)"></app-bars>

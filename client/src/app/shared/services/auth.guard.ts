@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
     return new Promise((resolve, reject) => {
 
       if ( !localStorage.getItem('token') ){
-        this.router.navigate(['/login'], {
+        this.router.navigate(['/auth/login'], {
               queryParams: {
                 return: state.url
               }
