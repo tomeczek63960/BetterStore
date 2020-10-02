@@ -1,0 +1,17 @@
+
+<ng-container *ngIf="user$ | async as user">
+
+  <div class="acount-page">
+  <h3 class="acount-page__heading">Witamy {{ user.name }}!</h3>
+
+  <p class="acount-page__data">Dane konta <a routerLink="/account/edit" class="acount-page__data-edit">Edytuj</a></p>
+
+  <p class="acount-page__data__details acount-page__data__details--user">{{ user.name }} {{ user.surname }}</p>
+  <p class="acount-page__data__details acount-page__data__details--email">{{ user.email }}</p>
+
+</div>
+
+</ng-container>
+
+
+<button class="btn" (click)="logout()">Wyloguj</button>

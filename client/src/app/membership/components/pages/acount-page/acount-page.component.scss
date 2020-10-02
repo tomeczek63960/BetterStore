@@ -1,0 +1,56 @@
+@import '../../../../../style/shared';
+
+.acount-page{
+  padding-top: 100px;
+  font-family: Poppins;
+  font-weight: bold;
+  color:$dark;
+
+  &__heading{
+    font-size: 40px;
+  }
+
+  &__data{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+    &-edit{
+      margin-left: 25px;
+      padding:5px 10px;
+      background-color: $pink;
+      border:none;
+      color:$dark;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &__details{
+      margin-top: 15px;
+      padding-left: 35px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+      line-height: 1.5;
+
+      &--user{
+        background-image: url('/assets/user.svg');
+      }
+      &--email{
+        background-image: url('/assets/send.svg');
+      }
+    }
+  }
+}
+.btn{
+  margin-top: 50px;
+  margin-bottom: 40px;
+  padding: 10px 35px;
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 16px;
+  color:$white;
+  background: $red;
+  border:none;
+  letter-spacing: 2px;
+}
