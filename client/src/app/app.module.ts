@@ -1,4 +1,3 @@
-import { ProductsModule } from './products/products.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,7 +19,6 @@ import { HttpErrorInterceptorInterceptor } from 'src/app/core/http-interceptors/
     HttpClientModule,
 
     CoreModule,
-    ProductsModule,
   ],
   providers: [
     ToastService,

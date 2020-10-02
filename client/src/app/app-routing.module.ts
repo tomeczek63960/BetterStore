@@ -1,3 +1,4 @@
+import { ProductsModule } from './products/products.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ShippingModule } from './shipping/shipping.module';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => MembershipModule
+  },
+  {
+    path: '',
+    loadChildren: () => ProductsModule
   }
 ];
 
