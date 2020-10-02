@@ -17,7 +17,7 @@ export class ProductService {
       limit: `${ limit }`,
       page: `${ page }`
     });
-    return this.http.get<ProductResponse>('http://localhost:5500/products', {headers: newHeaders});
+    return this.http.get<ProductResponse>('products', {headers: newHeaders});
   }
   getCategoryProducts({category = '', limit = 12, page = 1}): Observable<ProductResponse>{
     const body = new HttpHeaders({
@@ -25,7 +25,7 @@ export class ProductService {
       limit: `${ limit }`,
       page: `${ page }`
     });
-    return this.http.get<ProductResponse>('http://localhost:5500/products/filter', { headers: body });
+    return this.http.get<ProductResponse>('products/filter', { headers: body });
   }
   getFilterProducts({category = '', range = '', title = '', limit = 12, page = 1 }): Observable<ProductResponse>{
     const headers = {
@@ -37,9 +37,9 @@ export class ProductService {
     };
 
     const body = new HttpHeaders(headers);
-    return this.http.get<ProductResponse>('http://localhost:5500/products/filter', { headers: body });
+    return this.http.get<ProductResponse>('products/filter', { headers: body });
   }
   getProduct(id: string): Observable<Product>{
-    return this.http.get<Product>(`http://localhost:5500/products/${id}`);
+    return this.http.get<Product>(`products/${id}`);
   }
 }

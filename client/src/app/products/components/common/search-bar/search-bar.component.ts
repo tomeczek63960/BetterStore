@@ -29,6 +29,9 @@ export class SearchBarComponent {
 
     const params = this.route.snapshot.queryParams;
 
+    if (window.innerWidth <= 900 ){
+      window.scrollTo(0, 0);
+    }
     this.router.navigate(['/products/filter'], {
       queryParams: {
         limit: 20,

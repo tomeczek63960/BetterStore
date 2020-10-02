@@ -8,7 +8,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'cart',
     component: CartPageComponent,
     canActivate: [AuthGuard]
   },

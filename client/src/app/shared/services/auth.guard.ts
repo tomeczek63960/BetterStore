@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
         return reject(false);
 
       }
-      this.http.get('http://localhost:5500/auth/authentication')
+      this.http.get('auth/authentication')
 
       .subscribe(e => {
 

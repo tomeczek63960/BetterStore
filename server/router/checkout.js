@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const config = require('config');
-const stripe = require('stripe')( config.get('stripeSecretKey') );
+const stripe = require('stripe')( process.env.STRIPE_KEY );
 
-const YOUR_DOMAIN = 'http://localhost:4200';
+const YOUR_DOMAIN = 'https://betterstore.herokuapp.com';
 
 router.post('/', async (req, res) => {
   const products = req.body.products;
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
             line_items: checkoutProducts, 
             mode: 'payment',
             success_url: `${YOUR_DOMAIN}/cart/checkout/success`,
-            cancel_url: `${YOUR_DOMAIN}/cart`,
+            cancel_url: `${YOUR_DOMAIN}`,
         });
         res.json({ id: session.id });
     } catch(err){

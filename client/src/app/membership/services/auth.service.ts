@@ -10,18 +10,18 @@ export class AuthService  {
   constructor(private http: HttpClient) { }
 
   loginUser(userData: User): Observable<any>{
-    return this.http.post('http://localhost:5500/auth/login', userData);
+    return this.http.post('auth/login', userData);
   }
 
   registerUser(userData: User): Observable<User>{
-    return this.http.post<User>('http://localhost:5500/auth/register', userData);
+    return this.http.post<User>('auth/register', userData);
   }
 
   getUserData(): Observable<User> {
-    return this.http.get<User>('http://localhost:5500/auth');
+    return this.http.get<User>('auth');
   }
   changeUserData(data: User): Observable<User>{
-    return this.http.post<User>('http://localhost:5500/auth', { data } );
+    return this.http.post<User>('auth', { data } );
   }
 
 }

@@ -22,7 +22,7 @@ export class OnlyLoginUserGuard implements CanActivate {
         return reject(false);
       }
 
-      this.http.get('http://localhost:5500/auth/authentication').subscribe(e => {
+      this.http.get('auth/authentication').subscribe(e => {
         if (e){
           resolve(true);
         }else{

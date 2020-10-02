@@ -11,7 +11,7 @@ export class CheckoutService {
   constructor(private http: HttpClient) { }
 
   checkout( products: CartProduct[] ): Observable<object> {
-    return this.http.post('http://localhost:5500/checkout', { products });
+    return this.http.post('checkout', { products });
   }
 
 }

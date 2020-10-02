@@ -14,7 +14,7 @@ export class CheckoutSuccessComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.removeAll().subscribe(e => {
       this.toastService.success('Płatność dokonana pomyślnie');
-      this.router.navigate(['/cart']);
+      this.router.navigate(['/cart/cart']);
     });
   }
 }

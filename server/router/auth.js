@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
             _id: isMatchingUser[0]._id,
             email: isMatchingUser[0].email
         };
-        const token = jwt.sign(tokenData, config.get('jwtSecretKey') );
+        const token = jwt.sign(tokenData, process.env.JWT_KEY );
 
         res.send({ token });
     }catch(err){
