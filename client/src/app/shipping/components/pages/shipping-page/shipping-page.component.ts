@@ -1,5 +1,5 @@
 import { CartProduct } from './../../../interfaces/cartProduct';
-import { CartService } from 'src/app/shipping/services/cart.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { CheckoutService } from './../../../services/checkout.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidatorFn } from '@angular/forms';

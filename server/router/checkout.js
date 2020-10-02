@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
             payment_method_types: ['card'],
             line_items: checkoutProducts, 
             mode: 'payment',
-            success_url: `${YOUR_DOMAIN}/checkout/success`,
+            success_url: `${YOUR_DOMAIN}/cart/checkout/success`,
             cancel_url: `${YOUR_DOMAIN}/cart`,
         });
         res.json({ id: session.id });

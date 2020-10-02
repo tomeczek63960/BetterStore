@@ -1,3 +1,4 @@
+import { CartProduct } from './../interfaces/cartProduct';
 import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,8 +10,7 @@ export class CheckoutService {
 
   constructor(private http: HttpClient) { }
 
-  // products: Observable<CartProduct[]>
-  checkout( products ): Observable<object> {
+  checkout( products: CartProduct[] ): Observable<object> {
     return this.http.post('http://localhost:5500/checkout', { products });
   }
 

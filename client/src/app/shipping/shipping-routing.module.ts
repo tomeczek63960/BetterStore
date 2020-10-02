@@ -8,7 +8,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 
 const routes: Routes = [
   {
-    path: 'cart',
+    path: '',
     component: CartPageComponent,
     canActivate: [AuthGuard]
   },
@@ -25,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class ShippingRoutingModule { }

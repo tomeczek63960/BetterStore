@@ -29,7 +29,7 @@
     <thead> <tr> <th> Podsumowanie koszyka </th> </tr> </thead>
     <tbody class="cart-page__total__body">
       <tr><td><p>Cena</p> <p>{{ getTotalPrice() }}zł</p></td></tr>
-      <tr><td><button class="btn form__btn" [disabled]="getTotalPrice() == 0" routerLink="/shipping">Zapłać</button></td></tr>
+      <tr><td><button class="btn form__btn" [disabled]="getTotalPrice() == 0" routerLink="/cart/shipping">Zapłać</button></td></tr>
     </tbody>
   </table>
 </div>

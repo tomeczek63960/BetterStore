@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
 import { ToastService } from 'angular-toastify';
-import { CartService } from 'src/app/shipping/services/cart.service';
-import { HttpClient } from '@angular/common/http';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

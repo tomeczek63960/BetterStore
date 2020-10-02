@@ -1,7 +1,7 @@
 import { ProductResponse } from './../../../interfaces/ProductResponse';
 import { ToastService } from 'angular-toastify';
 import { OnlyLoginUserGuard } from 'src/app/products/services/only-login-user.guard';
-import { CartService } from 'src/app/shipping/services/cart.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/products/services/product.service';
 
 import { Component, DoCheck, OnInit } from '@angular/core';

@@ -1,4 +1,4 @@
-import { CartProduct } from './../interfaces/cartProduct';
+import { CartProduct } from '../../shipping/interfaces/cartProduct';
 import { Observable } from 'rxjs/internal/Observable';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';

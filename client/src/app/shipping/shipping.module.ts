@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { ShippingRoutingModule } from './shipping-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ import { CheckoutSuccessComponent } from './components/pages/checkout-success/ch
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     ShippingRoutingModule,
   ]
