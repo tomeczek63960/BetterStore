@@ -30,4 +30,7 @@ export class ProductService {
     const body = new HttpHeaders(headers);
     return this.http.get<Product[]>('http://localhost:5500/products/filter', { headers: body });
   }
+  getProduct(id: string): Observable<Product>{
+    return this.http.get<Product>(`http://localhost:5500/products/${id}`);
+  }
 }

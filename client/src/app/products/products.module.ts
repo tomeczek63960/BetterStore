@@ -13,6 +13,7 @@ import { HeroComponent } from 'src/app/products/components/pages/home-page/hero/
 import { HomePageComponent } from 'src/app/products/components/pages/home-page/home-page.component';
 import { PopularProductsComponent } from 'src/app/products/components/pages/home-page/popular-products/popular-products.component';
 import { ProductsPageComponent } from 'src/app/products/components/pages/products-page/products-page.component';
+import { ProductPageComponent } from 'src/app/products/components/pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProductsPageComponent } from 'src/app/products/components/pages/product
     HomePageComponent,
     PopularProductsComponent,
     ProductsPageComponent,
+    ProductPageComponent,
 
   ],
   imports: [

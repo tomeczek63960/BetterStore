@@ -1,0 +1,159 @@
+.product-page{
+  margin: 40px 0;
+  font-family: "Open Sans", sans-serif;
+
+  &__img{
+    max-width: 450px;
+    img{
+    width:100%;
+    }
+  }
+
+  &__path-links{
+    margin-top: 15px;
+  }
+  &__path-links,
+  &__path-links a{
+    color:#777;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  &__heading{
+    margin-top: 20px;
+    color:#333;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: capitalize;
+  }
+
+  &__price{
+    color:#000;
+
+    &-wrapper{
+      margin-top: 25px;
+      display: flex;
+      font-weight: bold;
+      column-gap: 15px;
+      font-size: 25px;
+    }
+  }
+  &__discount{
+    color:#555;
+    font-weight: bold;
+    text-decoration: line-through;
+  }
+
+  &__description{
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: Montserrat;
+  }
+
+  &__form{
+    margin-top: 25px;
+    display: flex;
+    column-gap:15px;
+
+    input{
+      width:60px;
+      height:35px;
+      border:1px solid #ddd;
+      padding: 0 10px;
+      text-align: center;
+      font-size: 13px;
+      color:#333;
+    }
+
+    button{
+      // width:100%;
+      margin-top: 0;
+      max-width:250px;
+      height: 35px;
+      line-height: 35px;
+      padding-top: 0;
+      padding-bottom: 0;
+      // height:35px;
+      // line-height: 35px;
+      // background-color: #8bc34a;
+      // color:white;
+      // text-transform: capitalize;
+      // font-weight: bold;
+      // font-family: Poppins;
+      // border:none;
+      // cursor: pointer;
+    }
+  }
+
+  &__product-category{
+    margin-top: 25px;
+    font-size: 14px;
+    font-family: Montserrat;
+
+    a{
+      color:#8bc34a;
+      text-transform: capitalize;
+    }
+  }
+}
+
+
+@media screen and (min-width:750px){
+  .product-page{
+    display: flex;
+    column-gap: 30px;
+
+    &__img{
+      width:40%;
+      flex-shrink: 0;
+    }
+    &__content{
+    }
+  }
+}
+
+@media screen and (min-width:1100px){
+  .product-page{
+    column-gap: 60px;
+
+    &__path-links{
+      font-size: 16px;
+    }
+    &__heading{
+      font-size: 40px;
+    }
+    &__description{
+      margin-top: 35px;
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    &__form{
+      margin-top: 40px;
+
+      input{
+        width:60px;
+        height:40px;
+        font-size: 14px;
+      }
+
+      button{
+        max-width:300px;
+        height:40px;
+        line-height: 40px;
+      }
+    }
+
+    &__product-category{
+      margin-top: 45px;
+      font-size: 15px;
+    }
+
+    &__price-wrapper{
+      margin-top: 35px;
+      column-gap: 20px;
+      font-size: 28px;
+    }
+  }
+}

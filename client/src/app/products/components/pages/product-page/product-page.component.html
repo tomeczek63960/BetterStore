@@ -1,0 +1,44 @@
+
+<section class="product-page" *ngIf="product$ | async as product">
+
+  <div class="product-page__img">
+    <img [src]="product.img" [alt]="product.title">
+  </div>
+
+  <div class="product-page__content">
+
+    <p class="product-page__path-links">
+      <a routerLink="/">Home</a> /
+      <a routerLink="/products">Products</a> /
+      <a [routerLink]="['/products/filter']" [queryParams]="{ filter: stringifyData({ category: [ product.category ]}) } ">{{ product.category }}</a> /
+      <a routerLink="/products/{{ product.category }}/{{ product._id }}">{{ product.title }}</a>
+    </p>
+
+    <h4 class="product-page__heading">{{ product.title }}</h4>
+
+    <div class="product-page__price-wrapper" >
+
+      <p class="product-page__discount" *ngIf="product.discount > 0">
+        {{ ( product.price + ( product.price / 100 * product.discount )).toFixed(2)  }}zł
+      </p>
+      <p class="product-page__price">{{ product.price }}zł</p>
+
+    </div>
+
+    <p class="product-page__description">{{ product.description }}</p>
+
+    <div class="product-page__form">
+      <input type="number" [(ngModel)]="quantity" class="product-page__quantity">
+      <button class="form__btn"  (click)="addToCart(product)" [disabled]="quantity < 1" >Do koszyka</button>
+    </div>
+
+    <p class="product-page__product-category">Kategoria:
+       <a [routerLink]="['/products/filter']" [queryParams]="{ filter: stringifyData({ category: [ product.category ]}) } ">{{ product.category }}</a>
+    </p>
+
+  </div>
+
+</section>
+
+<h3 class="heading">Podobne wyszukiwania</h3>
+<app-products-wrapper [data]="categoryProducts"></app-products-wrapper>
