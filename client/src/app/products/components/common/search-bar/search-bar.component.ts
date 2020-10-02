@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, DoCheck } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SearchBarComponent {
   title = '';
   selectedCategories = [];
+  prevQuery;
 
   price = {
     min: 0,
@@ -21,7 +22,6 @@ export class SearchBarComponent {
     { value: 'healthy',  title: 'Zdrowie', isActive: false }
   ];
 
-  prevQuery;
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   handleSubmit(): void{
@@ -31,6 +31,7 @@ export class SearchBarComponent {
 
     this.router.navigate(['/products/filter'], {
       queryParams: {
+        limit: 20,
         ...params,
         page: 1,
         filter: JSON.stringify({
