@@ -12,6 +12,7 @@ import { CategoriesComponent } from 'src/app/products/components/pages/home-page
 import { HeroComponent } from 'src/app/products/components/pages/home-page/hero/hero.component';
 import { HomePageComponent } from 'src/app/products/components/pages/home-page/home-page.component';
 import { PopularProductsComponent } from 'src/app/products/components/pages/home-page/popular-products/popular-products.component';
+import { ProductsPageComponent } from 'src/app/products/components/pages/products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PopularProductsComponent } from 'src/app/products/components/pages/home
     HeroComponent,
     HomePageComponent,
     PopularProductsComponent,
+    ProductsPageComponent,
 
   ],
   imports: [
