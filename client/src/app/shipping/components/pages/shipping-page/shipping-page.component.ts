@@ -1,3 +1,4 @@
+import { CartProduct } from './../../../interfaces/cartProduct';
 import { CartService } from 'src/app/shipping/services/cart.service';
 import { CheckoutService } from './../../../services/checkout.service';
 import { Component, OnInit } from '@angular/core';
@@ -140,7 +141,7 @@ export class ShippingPageComponent implements OnInit {
   constructor(private cartService: CartService, private checkoutService: CheckoutService) { }
 
   stripe = Stripe('pk_test_Hbh4N8yzPt7K0S8vZnLbPNCY00qgv4xKHd');
-  items: any;
+  items: CartProduct[];
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(e => {

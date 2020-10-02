@@ -1,3 +1,4 @@
+import { ProductResponse } from './../../../interfaces/ProductResponse';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, Input, OnInit, DoCheck} from '@angular/core';
 import { Product } from 'src/app/products/interfaces/product';
@@ -12,7 +13,7 @@ export class ProductsWrapperComponent implements OnInit, DoCheck{
   @Input() products: Product[];
   @Input() searchbar: boolean;
   @Input() pagination: boolean;
-  @Input() data;
+  @Input() data: ProductResponse;
 
   totalPages: number;
   currentPage: number;

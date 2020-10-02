@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { CartProduct } from './../../../interfaces/cartProduct';
 import { CartService } from 'src/app/shipping/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-page.component.scss']
 })
 export class CartPageComponent implements OnInit {
-  products = [];
+  products: CartProduct[];
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class CartPageComponent implements OnInit {
     });
   }
 
-  removeProduct(product): void{
+  removeProduct(product: CartProduct): void{
     this.cartService.remove(product.productId).subscribe(msg => {
       this.products = this.products.filter(e => e.productId !== product.productId );
     });
