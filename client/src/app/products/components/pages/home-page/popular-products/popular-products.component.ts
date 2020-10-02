@@ -1,3 +1,4 @@
+import { ProductResponse } from './../../../../interfaces/ProductResponse';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/products/services/product.service';
 
@@ -6,7 +7,7 @@ import { ProductService } from 'src/app/products/services/product.service';
   templateUrl: './popular-products.component.html',
 })
 export class PopularProductsComponent implements OnInit {
-  products;
+  products: ProductResponse;
 
   constructor(private productService: ProductService) { }
 

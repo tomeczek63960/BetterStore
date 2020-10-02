@@ -1,3 +1,4 @@
+import { ProductResponse } from './../../../interfaces/ProductResponse';
 import { ProductService } from 'src/app/products/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, DoCheck } from '@angular/core';
@@ -7,7 +8,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
   templateUrl: './filter-page.component.html',
 })
 export class FilterPageComponent implements OnInit, DoCheck {
-  products;
+  products: ProductResponse;
   filter;
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }

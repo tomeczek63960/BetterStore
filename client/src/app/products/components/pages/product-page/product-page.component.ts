@@ -1,3 +1,4 @@
+import { ProductResponse } from './../../../interfaces/ProductResponse';
 import { ToastService } from 'angular-toastify';
 import { OnlyLoginUserGuard } from 'src/app/products/services/only-login-user.guard';
 import { CartService } from 'src/app/shipping/services/cart.service';
@@ -18,7 +19,7 @@ export class ProductPageComponent implements OnInit, DoCheck {
   id: string;
   category: string;
   quantity = 1;
-  categoryProducts: Product[];
+  categoryProducts: ProductResponse;
 
   stringifyData(data): string {
     return JSON.stringify(data);

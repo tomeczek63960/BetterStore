@@ -1,4 +1,4 @@
-import { Product } from 'src/app/products/interfaces/product';
+import { ProductResponse } from './../../../interfaces/ProductResponse';
 import { ProductService } from 'src/app/products/services/product.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './products-page.component.html',
 })
 export class ProductsPageComponent implements OnInit, DoCheck {
-  products: Product[];
+  products: ProductResponse;
   queryParams;
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
