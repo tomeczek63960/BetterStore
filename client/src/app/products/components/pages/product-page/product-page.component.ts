@@ -1,6 +1,6 @@
 import { ToastService } from 'angular-toastify';
-// import { OnlyLoginUserGuard } from 'src/app/products/services/only-login-user.guard';
-// import { CartService } from 'src/app/shipping/services/cart.service';
+import { OnlyLoginUserGuard } from 'src/app/products/services/only-login-user.guard';
+import { CartService } from 'src/app/shipping/services/cart.service';
 import { ProductService } from 'src/app/products/services/product.service';
 
 import { Component, DoCheck, OnInit } from '@angular/core';
@@ -24,15 +24,15 @@ export class ProductPageComponent implements OnInit, DoCheck {
     return JSON.stringify(data);
   }
   constructor(private productService: ProductService, private route: ActivatedRoute,
-              // private cartService: CartService,
-              // private onlyLoggedUserGuard: OnlyLoginUserGuard,
+              private cartService: CartService,
+              private onlyLoggedUserGuard: OnlyLoginUserGuard,
               private toastService: ToastService
               ) { }
 
   private getCategoryProducts(): void{
-    // this.productService.getCategoryProducts({ category: this.category }).subscribe(e => {
-    //   this.categoryProducts = e;
-    // });
+    this.productService.getCategoryProducts({ category: this.category }).subscribe(e => {
+      this.categoryProducts = e;
+    });
   }
   private getProduct(): void{
     this.product$ = this.productService.getProduct(this.id);
@@ -67,15 +67,11 @@ export class ProductPageComponent implements OnInit, DoCheck {
 
     const params = this.route.snapshot.params;
     const location = `/products/${params.category}/${params.id}`;
-    // const isLogged = await this.onlyLoggedUserGuard.canActivate(location);
-    // if (!isLogged)  { return; }
+    const isLogged = await this.onlyLoggedUserGuard.canActivate(location);
+    if (!isLogged)  { return; }
 
-    // this.cartService.addProduct(product).subscribe(e => {
-    //   this.toastService.success('Produkt dodany do koszyka');
-    // },
-    // error => {
-    //   this.toastService.error(error.error.msg || 'Błąd po stronie serwera');
-    // }
-    // );
+    this.cartService.addProduct(product).subscribe(e => {
+      this.toastService.success('Produkt dodany do koszyka');
+    });
   }
 }

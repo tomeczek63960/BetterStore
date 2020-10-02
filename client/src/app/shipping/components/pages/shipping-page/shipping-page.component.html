@@ -1,0 +1,42 @@
+<h4 class="heading">Adres Dostawy</h4>
+
+<form class="form" autocomplete="off" [formGroup]="deliveryAdresGroup">
+
+    <div class="form-field" *ngFor="let field of inputFields">
+      <label [for]="field.key" class="form-field__label">{{ field.label }}</label>
+
+      <!-- errors -->
+      <ng-container *ngFor="let err of field.errors">
+        <p class="form-field__error"
+          *ngIf="
+              deliveryAdresGroup.get(field.key).touched &&
+              deliveryAdresGroup.get(field.key).dirty &&
+              deliveryAdresGroup.get(field.key).errors &&
+              deliveryAdresGroup.get(field.key).errors[err.type]
+          "
+        >{{ err.msg }}</p>
+      </ng-container>
+
+      <!-- Fields -->
+      <input
+        class="form-field__control"
+        autocomplete="off"
+        [type]="field.type"
+        [id]='field.key'
+        [placeholder]="field.placeholder"
+        [formControlName]='field.key'
+        [class.form-field__control--invalid]="
+            deliveryAdresGroup.get(field.key).dirty &&
+            deliveryAdresGroup.get(field.key).status === 'INVALID'
+        "
+
+        [class.form-field__control--valid]="
+            deliveryAdresGroup.get(field.key).dirty &&
+            deliveryAdresGroup.get(field.key).status === 'VALID'
+        "
+      />
+    </div>
+
+    <button class="form__btn" [disabled]="deliveryAdresGroup.invalid" (click)="doCheckout()">Przejdź do płatności</button>
+
+</form>
