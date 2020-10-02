@@ -1,0 +1,46 @@
+<h4 class="heading">Edytuj informacje o końcie</h4>
+<a routerLink="/account" class="link-back">Powrót</a>
+
+<form  class="form form__edit-account" [formGroup]="editGroup"  (submit)="submit($event)">
+
+  <div
+    class="form-field"
+    [class.form-field--full-width]="field.key === 'email'"
+    *ngFor="let field of inputFields"
+  >
+    <label class="form-field__label" [for]="field.key" >{{ field.label }}</label>
+
+    <ng-container *ngFor="let err of field.errors">
+      <p class="form-field__error"
+      *ngIf="
+          editGroup.get(field.key).touched &&
+          editGroup.get(field.key).dirty &&
+          editGroup.get(field.key).errors &&
+          editGroup.get(field.key).errors[err.type]
+      "
+    >{{ err.msg }}</p>
+    </ng-container>
+
+    <input
+      class="form-field__control"
+      autocomplete="off"
+      [type]="field.type"
+      [id]="field.key"
+      [formControlName]="field.key"
+
+      [class.form-field__control--invalid]="
+            editGroup.get(field.key).dirty &&
+            editGroup.get(field.key).status === 'INVALID'
+        "
+
+        [class.form-field__control--valid]="
+            editGroup.get(field.key).dirty &&
+            editGroup.get(field.key).status === 'VALID'
+        "
+    />
+
+  </div>
+
+  <button class="form__btn" type="submit" [disabled]="editGroup.invalid">Edytuj</button>
+
+</form>

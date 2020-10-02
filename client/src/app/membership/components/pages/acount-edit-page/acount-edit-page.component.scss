@@ -1,0 +1,16 @@
+@import '../../../../../style/shared';
+
+.link-back{
+  padding: 7px 20px 7px 35px;
+  background: $black;
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+
+  background-image: url('/assets/arrow-left-white.svg');
+  background-size: 15px;
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+
+}
+
