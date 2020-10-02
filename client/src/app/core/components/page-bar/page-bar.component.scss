@@ -1,0 +1,17 @@
+@import '../../../../style/shared';
+
+.page-bar{
+  height:90px;
+
+  &, &__content{
+    @include flex(space-between,center);
+  }
+}
+
+@media screen and (min-width:750px){
+  .page-bar__content{
+    app-cart{
+      order:1;
+    }
+  }
+}

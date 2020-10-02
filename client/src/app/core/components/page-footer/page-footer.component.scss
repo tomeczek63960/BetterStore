@@ -1,0 +1,167 @@
+@import '../../../../style/shared';
+
+.page-footer{
+  margin: 30px -20px 0;
+  padding: 40px 20px 30px;
+  width: calc(100% + 40px);
+  background-color: $footerBg;
+  color:$white;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+
+  &__row{
+    margin-top: 35px;
+
+    &__heading{
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 1px;
+    }
+    &__text{
+      margin: 10px auto 0;
+      max-width: 360px;
+      color:$footerLink;
+    }
+
+    &__icons{
+      @include flex(center,auto,20px);
+      margin-top: 20px;
+
+      &__app-store,
+      &__google-play{
+        height:45px;
+        width:150px;
+        display:block;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+        text-indent: -9999px;
+      }
+      &__app-store{
+        background-image: url('/assets/app-store.png');
+      }
+      &__google-play{
+        background-image: url('/assets/google-play.png');
+      }
+    }
+
+    &__link{
+      margin-top: 8px;
+      display: block;
+      color: $footerLink;
+      transition:0.6s;
+
+      &:hover{
+        color: $lightGreen;
+      }
+
+      &-wrapper{
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__copyright{
+    padding-top: 30px;
+    margin: 30px -20px 0;
+    width:calc(100% + 40px);
+    color:$footerLink;
+    border-top:1px solid $copyrightBorder;
+
+    &-icons{
+      margin-top: 20px;
+      a{
+        margin-right: 10px;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        text-indent: -99999px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+      }
+    }
+
+  }
+}
+
+.icon--facebook{
+  background-image: url('/assets/social-media/facebook.svg');
+}
+.icon--twitter{
+  background-image: url('/assets/social-media/twitter.svg');
+}
+.icon--amazon{
+  background-image: url('/assets/social-media/amazon.svg');
+}
+.icon--instagram{
+  background-image: url('/assets/social-media/instagram.svg');
+}
+
+@media screen and (min-width:700px){
+  .page-footer{
+
+    &__content{
+      @include flex(auto, flex-start,0 30px,wrap);
+      text-align: left;
+    }
+
+    &__row{
+      width: calc(50% - 15px);
+
+      &__text{
+        margin-left: 0;
+      }
+      &__icons{
+        justify-content: flex-start;
+      }
+    }
+
+    &__copyright{
+      @include flex(space-between, center);
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &-icons{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:900px){
+  .page-footer{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:1100px){
+  .page-footer{
+    padding: 60px 40px 30px;
+    flex-wrap: nowrap;
+
+    &__row{
+      width:calc(25% - 23px);
+    }
+
+    &__copyright{
+      width: calc(100% + 80px);
+      margin-left: -40px;
+      margin-right: -40px;
+
+      padding-left: 40px;
+      padding-right: 40px;
+
+    }
+  }
+
+}

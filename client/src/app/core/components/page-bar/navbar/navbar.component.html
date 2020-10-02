@@ -1,0 +1,17 @@
+<ul class="page-navbar" [class.page-navbar--active]="isActive">
+  <li class="page-navbar__item" (click)="toggleNavbar()" routerLinkActive='page-navbar__item--active' [routerLinkActiveOptions]="{ exact: true }"><a routerLink='/'>Strona główna</a></li>
+  <li class="page-navbar__item" (click)="toggleNavbar()" routerLinkActive='page-navbar__item--active'><a routerLink='/products'>Wszystkie produkty</a></li>
+
+  <li class="page-navbar__item page-navbar__item__toggler-wrapper" (click)="toggleSubmenu()"  >
+      <button class="page-navbar__item__toggler" [class.page-navbar__item__toggler--active]="isSubmenuActive">Kategorie</button>
+      <ul class="page-navbar__submenu" [class.page-navbar__submenu--active]="isSubmenuActive">
+        <li class="page-navbar__submenu__item" (click)="toggleNavbar()"><a [routerLink]="['/products/filter']" [queryParams]="{ filter: categoriesParams.clothes}">Ubrania</a></li>
+        <li class="page-navbar__submenu__item" (click)="toggleNavbar()"><a [routerLink]="['/products/filter']" [queryParams]="{ filter: categoriesParams.mugs}">Kubki</a></li>
+        <li class="page-navbar__submenu__item" (click)="toggleNavbar()"><a [routerLink]="['/products/filter']" [queryParams]="{ filter: categoriesParams.healthy}">Zdrowie</a></li>
+        <li class="page-navbar__submenu__item" (click)="toggleNavbar()"><a [routerLink]="['/products/filter']" [queryParams]="{ filter: categoriesParams.cosmetics}">Kosmetyki</a></li>
+      </ul>
+  </li>
+  <li class="page-navbar__item" (click)="toggleNavbar()" routerLinkActive='page-navbar__item--active' ><a routerLink='/account' >Moje konto</a></li>
+
+</ul>
+<app-bars [isActive]="isActive" (toggleNavbar)="toggleNavbar($event)"></app-bars>

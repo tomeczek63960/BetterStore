@@ -1,0 +1,60 @@
+$white: white;
+$black: black;
+$lightBlack: rgba(0,0,0,.7);
+$lightGreen: #8bc34a;
+$dark: #333;
+$gray: #555;
+$lightGray: #9c9797;
+$red: #820;
+
+$footerBg:#001524;
+$footerLink:#FFFFFFC2;
+$copyrightBorder:#3d3d3d;
+$navbarBg: #f9f9f9;
+$navbarItemBorder: #eaeaea;
+
+
+@mixin absolute($top:auto,$right:auto,$bottom:auto,$left:auto,$transform:auto,$index:auto,$position:absolute) {
+  position: $position;
+
+  @if($top != auto){
+      top: $top;
+  }
+  @if($left != auto){
+      left: $left;
+  }
+  @if($right != auto){
+      right: $right;
+  }
+  @if($bottom != auto){
+      bottom: $bottom;
+  }
+  @if($top != auto){
+      top: $top;
+  }
+  @if($index != auto){
+      z-index: $index;
+  }
+  @if(transform != auto){
+      transform:$transform;
+  }
+}
+@mixin flex( $justify:auto, $align:auto,$gap:auto, $wrap:auto, $direction:auto,  $display:flex ){
+  display:$display;
+
+  @if($justify != auto){
+      justify-content: $justify;
+  }
+  @if($align != auto){
+      align-items: $align;
+  }
+  @if($direction != auto){
+      flex-direction:$direction;
+  }
+  @if($wrap != auto){
+      flex-wrap: $wrap;
+  }
+  @if($gap != auto){
+      gap: $gap;
+  }
+}

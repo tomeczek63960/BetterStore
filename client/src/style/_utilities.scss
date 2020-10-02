@@ -1,0 +1,12 @@
+.center-wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width:1350px;
+
+  @media screen and (min-width:900px){
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
