@@ -18,6 +18,14 @@ export class ProductService {
     });
     return this.http.get<Product[]>('http://localhost:5500/products', {headers: newHeaders});
   }
+  getCategoryProducts({category = '', limit = 12, page = 1}): Observable<Product[]>{
+    const body = new HttpHeaders({
+      category,
+      limit: `${ limit }`,
+      page: `${ page }`
+    });
+    return this.http.get<Product[]>('http://localhost:5500/products/filter', { headers: body });
+  }
   getFilterProducts({category = '', range = '', title = '', limit = 12, page = 1 }): Observable<Product[]>{
     const headers = {
         category,

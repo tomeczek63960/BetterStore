@@ -14,6 +14,7 @@ import { HomePageComponent } from 'src/app/products/components/pages/home-page/h
 import { PopularProductsComponent } from 'src/app/products/components/pages/home-page/popular-products/popular-products.component';
 import { ProductsPageComponent } from 'src/app/products/components/pages/products-page/products-page.component';
 import { ProductPageComponent } from 'src/app/products/components/pages/product-page/product-page.component';
+import { FilterPageComponent } from 'src/app/products/components/pages/filter-page/filter-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductPageComponent } from 'src/app/products/components/pages/product-
     PopularProductsComponent,
     ProductsPageComponent,
     ProductPageComponent,
+    FilterPageComponent,
 
   ],
   imports: [
