@@ -1,3 +1,4 @@
+import { NotFoundModule } from './not-found/not-found.module';
 import { ProductsModule } from './products/products.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => ProductsModule
+  },
+  {
+    path: 'notfound',
+    loadChildren: () => NotFoundModule
+  },
+  {
+    path: '**',
+    redirectTo: '/notfound'
   }
 ];
 
