@@ -13,7 +13,7 @@ app.use(express.static('.'));
 app.use( express.json() );
 app.use( cors() );
 
-app.use('/products', productRouter);
+app.use('/elements', productRouter);
 app.use('/auth', authRouter);
 app.use('/cart', cartRouter);
 app.use('/checkout', checkoutRouter);

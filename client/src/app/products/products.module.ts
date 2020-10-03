@@ -16,6 +16,7 @@ import { ProductsPageComponent } from 'src/app/products/components/pages/product
 import { ProductPageComponent } from 'src/app/products/components/pages/product-page/product-page.component';
 import { FilterPageComponent } from 'src/app/products/components/pages/filter-page/filter-page.component';
 
+
 @NgModule({
   declarations: [
     ProductsWrapperComponent,
